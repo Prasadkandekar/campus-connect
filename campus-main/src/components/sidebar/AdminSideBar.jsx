@@ -8,47 +8,47 @@ import SidebarMenu from "./SideBarMenu";
 
 const adminRoutes = [
   {
-    path: "/admin-dashboard",
+    path: "", // Relative to /admin
     name: "Dashboard",
     icon: <AiOutlineDatabase />,
   },
   {
-    path: "/add-student",
+    path: "add-student",
     name: "Add Student",
     icon: <FaUserPlus />,
   },
   {
-    path: "/add-faculty",
+    path: "add-faculty",
     name: "Add Faculty",
     icon: <AiOutlinePlus />,
   },
   {
-    path: "/delete-user",
+    path: "delete-user",
     name: "Delete User",
     icon: <FaTrashAlt />,
   },
   {
-    path: "/view-departments",
+    path: "view-departments",
     name: "View Departments",
     icon: <BiAnalyse />,
   },
   {
-    path: "/view-locations",
+    path: "view-locations",
     name: "View Student Locations",
     icon: <BiMap />,
   },
   {
-    path: "/admin-settings",
+    path: "admin-settings",
     name: "Settings",
     icon: <AiOutlineSetting />,
     subRoutes: [
       {
-        path: "/admin-settings/edit-profile",
+        path: "admin-settings/edit-profile",
         name: "Edit Profile",
         icon: <FaUsers />,
       },
       {
-        path: "/admin-settings/change-password",
+        path: "admin-settings/change-password",
         name: "Change Password",
         icon: <AiOutlineSetting />,
       },
@@ -56,7 +56,7 @@ const adminRoutes = [
   },
 ];
 
-const Sidebar = ({ children }) => {
+const AdminSideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -148,6 +148,7 @@ const Sidebar = ({ children }) => {
                     isActive ? "bg-red-600" : ""
                   }`
                 }
+                end={route.path === ""}
               >
                 <div className="text-xl">{route.icon}</div>
                 <AnimatePresence>
@@ -170,11 +171,9 @@ const Sidebar = ({ children }) => {
       </motion.div>
 
       {/* Main Content */}
-      <main className="flex-1 bg-gray-100 p-4 overflow-auto">
-        {children}
-      </main>
+      <main className="flex-1 bg-gray-100 p-4 overflow-auto">{children}</main>
     </div>
   );
 };
 
-export default Sidebar;
+export default AdminSideBar;

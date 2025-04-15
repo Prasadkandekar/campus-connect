@@ -1,23 +1,23 @@
-import "./App.css";
-import SideBar from "./components/sidebar/SideBar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Student from "./routes/Student";
 import Faculty from "./routes/Faculty";
 import Admin from "./routes/Admin";
-function App() {
+import AdminDashboard from "./pages/AdminDashboard";
+
+const App = () => {
   return (
-    <>
-    {/* <Router>
+    <Router>
       <Routes>
-        <Route path ="/"element={<LandingPage />}/>  
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/student/*" element={<Student />} />
+        <Route path="/faculty/*" element={<Faculty />} />
+        <Route path="/admin/*" element={<Admin />} />
       </Routes>
-    </Router> */}
-    {/* <Admin /> */}
-    <Student />
-    {/* <Faculty /> */}
-    </>
-  );  
-}
+    </Router>
+    // <AdminDashboard />
+  );
+};
 
 export default App;

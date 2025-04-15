@@ -15,23 +15,32 @@ import SidebarMenu from "./SideBarMenu";
 
 const routes = [
   { path: "/student", name: "Dashboard", icon: <FaHome /> },
-  { path: "/attendance", name: "View Attendance", icon: <FaUser /> },
-  { path: "/notes", name: "Download Notes", icon: <BiAnalyse /> },
-  { path: "/stresslevel", name: "View Stress Level", icon: <MdMessage /> },
-  { path: "/student-profile", name: "Profile", icon: <FaUser /> },
+  { path: "/student/attendance", name: "View Attendance", icon: <FaUser /> },
+  { path: "/student/notes", name: "Download Notes", icon: <BiAnalyse /> },
+  { path: "/student/stresslevel", name: "View Stress Level", icon: <MdMessage /> },
+  { path: "/student/student-profile", name: "Profile", icon: <FaUser /> },
   {
-    path: "/student-settings",
+    path: "/student/student-settings",
     name: "Settings",
     icon: <BiCog />,
     subRoutes: [
-      { path: "/student-settings/edit-profile", name: "Edit Profile", icon: <AiFillDatabase /> },
-      { path: "/student-settings/change-password", name: "Change Password", icon: <AiFillEye /> },
+      {
+        path: "/student/student-settings/edit-profile",
+        name: "Edit Profile",
+        icon: <AiFillDatabase />,
+      },
+      {
+        path: "/student/student-settings/change-password",
+        name: "Change Password",
+        icon: <AiFillEye />,
+      },
     ],
   },
   { path: "/", name: "Logout", icon: <AiOutlineLogout /> },
 ];
 
-const SideBar = ({ children }) => {
+
+const StudentSideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -136,4 +145,4 @@ const SideBar = ({ children }) => {
   );
 };
 
-export default SideBar;
+export default StudentSideBar;

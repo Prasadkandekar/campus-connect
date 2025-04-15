@@ -12,60 +12,62 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SideBarMenu";
 
-const routes = [
-  {
-    path: "/faculty",
-    name: "Dashboard",
-    icon: <FaHome />,
-  },
-  {
-    path: "/take-attendance",
-    name: "Take Attendance",
-    icon: <FaUser />,
-  },
-  {
-    path: "/divisions",
-    name: "Divisions",
-    icon: <AiOutlinePlus />,
-  },
-  {
-    path: "/add-notes",
-    name: "Add Notes",
-    icon: <AiTwotoneFileExclamation />,
-  },
-  {
-    path: "/student-stress-level",
-    name: "Student Stress Level",
-    icon: <BiAnalyse />,
-  },
-  {
-    path: "/location",
-    name: "View Student Location",
-    icon: <BiAnalyse />,
-  },
-  {
-    path: "/faculty-profile",
-    name: "Profile",
-    icon: <FaUser />,
-  },
-  {
-    path: "/faculty-settings",
-    name: "Settings",
-    icon: <AiOutlineSetting />,
-    subRoutes: [
-      {
-        path: "/faculty-settings/edit-profile",
-        name: "Edit Profile",
-        icon: <AiFillDatabase />,
-      },
-      {
-        path: "/faculty-settings/change-password",
-        name: "Change Password",
-        icon: <AiFillEye />,
-      },
-    ],
-  },
-];
+
+  const routes = [
+    {
+      path: "/faculty",
+      name: "Dashboard",
+      icon: <FaHome />,
+    },
+    {
+      path: "/faculty/take-attendance",
+      name: "Take Attendance",
+      icon: <FaUser />,
+    },
+    {
+      path: "/faculty/divisions",
+      name: "Divisions",
+      icon: <AiOutlinePlus />,
+    },
+    {
+      path: "/faculty/add-notes",
+      name: "Add Notes",
+      icon: <AiTwotoneFileExclamation />,
+    },
+    {
+      path: "/faculty/student-stress-level",
+      name: "Student Stress Level",
+      icon: <BiAnalyse />,
+    },
+    {
+      path: "/faculty/location",
+      name: "View Student Location",
+      icon: <BiAnalyse />,
+    },
+    {
+      path: "/faculty/faculty-profile",
+      name: "Profile",
+      icon: <FaUser />,
+    },
+    {
+      path: "/faculty/faculty-settings",
+      name: "Settings",
+      icon: <AiOutlineSetting />,
+      subRoutes: [
+        {
+          path: "/faculty/faculty-settings/edit-profile",
+          name: "Edit Profile",
+          icon: <AiFillDatabase />,
+        },
+        {
+          path: "/faculty/faculty-settings/change-password",
+          name: "Change Password",
+          icon: <AiFillEye />,
+        },
+      ],
+    },
+  ];
+  
 
 const FacultySideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
